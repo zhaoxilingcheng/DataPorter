@@ -41,7 +41,7 @@ class BaseSpider(ABC):
     def login_by_cookies(self):
         if self.load_cookie():
             return self
-        self.login()
+        return self.login()
 
     def login(self):
         print('开始进行人工登录')

@@ -41,7 +41,7 @@ class DangDangSpider(BaseSpider):
 
 
 if __name__ == '__main__':
-    dd = DangDangSpider().load_cookie()
+    dd = DangDangSpider().login_by_cookies()
     print(dd.get_order_list().data_list)
     dd.to_csv()
     dd.save_cookie()
