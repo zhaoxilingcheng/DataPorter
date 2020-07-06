@@ -1,3 +1,4 @@
+import pickle
 from abc import ABC, abstractmethod
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -7,7 +8,8 @@ import pandas
 
 class BaseSpider(ABC):
 
-    def __init__(self, login_url: str, verify_url: str):
+    def __init__(self, base_url: str, login_url: str, verify_url: str):
+        self.base_url = base_url
         self.login_url = login_url
         self.verify_url = verify_url
         self.driver = self.get_chrome_driver()
@@ -37,10 +39,12 @@ class BaseSpider(ABC):
         return driver
 
     def login(self):
+        print('开始进行登录')
         driver = self.driver
         driver.get(self.login_url)
         self.sub_login()
         self.verify_login()
+        return self
 
     @abstractmethod
     def sub_login(self):
@@ -60,11 +64,8 @@ class BaseSpider(ABC):
                 raise Exception('登录失败')
         return self.is_login
 
-    def close(self):
-        self.driver.close()
-        self.is_login = False
-
     def to_csv(self):
+        print('开始生成csv文件')
         if not self.data_list:
             print('数据为空')
             return
@@ -72,3 +73,35 @@ class BaseSpider(ABC):
         df = pandas.DataFrame()
         df = df.append(data_list)
         df.to_csv(self.__class__.__name__ + '.csv')
+
+    def save_cookie(self):
+        cookie = self.driver.get_cookies()
+        with open(self.__class__.__name__, 'wb') as f:
+            f.write(pickle.dumps(cookie))
+
+    def load_cookie(self):
+        print('开始加载cookies信息')
+        try:
+            with open(self.__class__.__name__, 'rb') as f:
+                cookie = pickle.load(f)
+                if not cookie:
+                    return False
+        except FileNotFoundError as e:
+            return False
+        for cookies in cookie:
+            if 'expiry' in cookies:
+                del cookies['expiry']
+            if 'domain' in cookie:
+                del cookies['domain']
+        self.driver.get(self.base_url)
+        for i in cookie:
+            self.driver.add_cookie(i)
+        print("load over")
+        self.driver.refresh()
+        self.is_login = True
+        return self
+
+    def close(self):
+        self.save_cookie()
+        self.driver.close()
+        self.is_login = False

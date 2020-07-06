@@ -6,7 +6,8 @@ import json
 class DangDangSpider(BaseSpider):
 
     def __init__(self):
-        super().__init__(login_url='https://login.dangdang.com/signin.aspx', verify_url='http://www.dangdang.com/')
+        super().__init__(base_url='http://dangdang.com', login_url='https://login.dangdang.com/signin.aspx',
+                         verify_url='http://www.dangdang.com/')
 
     def sub_login(self):
         driver = self.driver
@@ -40,7 +41,9 @@ class DangDangSpider(BaseSpider):
 
 
 if __name__ == '__main__':
-    dd = DangDangSpider().login()
+    dd = DangDangSpider().load_cookie()
     print(dd.get_order_list().data_list)
+    dd.to_csv()
+    dd.save_cookie()
     dd.close()
 
