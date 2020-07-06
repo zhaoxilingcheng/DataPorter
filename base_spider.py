@@ -38,8 +38,13 @@ class BaseSpider(ABC):
         driver.implicitly_wait(10)
         return driver
 
+    def login_by_cookies(self):
+        if self.load_cookie():
+            return self
+        self.login()
+
     def login(self):
-        print('开始进行登录')
+        print('开始进行人工登录')
         driver = self.driver
         driver.get(self.login_url)
         self.sub_login()
