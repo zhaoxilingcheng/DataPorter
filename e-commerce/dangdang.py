@@ -1,13 +1,13 @@
 from base_spider import BaseSpider
-import time
 import re
 import json
+from models import *
 
 class DangDangSpider(BaseSpider):
 
-    def __init__(self):
+    def __init__(self, sleep_time: int = 3):
         super().__init__(base_url='http://dangdang.com', login_url='https://login.dangdang.com/signin.aspx',
-                         verify_url='http://www.dangdang.com/')
+                         verify_url='http://www.dangdang.com/', sleep_time=sleep_time)
 
     def sub_login(self):
         driver = self.driver
@@ -31,12 +31,29 @@ class DangDangSpider(BaseSpider):
             page_size = data['pageInfo']['pageSize']
             data_list = data['orderList']
             print(f'爬取订单数量为{len(data_list)}')
-            self.data_list.extend(data_list)
+            for i in data_list:
+                order = i['order']
+                products = i['products']
+                for product in products:
+                    order_model = OrderModel(
+                        order_id=order['orderId'],
+                        total_price=order['totalPrice'],
+                        receiver_name=order['receiverName'],
+                        receiver_address=order['receiverAddress'],
+                        receiver_phone=order['urgeReceiverMobile'],
+                        product_name=product['productName'],
+                        price=product['salePrice'],
+                        product_url=product['productSnapshotUrl'],
+                        status=order['orderViewStatus'],
+                        order_time=order['orderCreationDate'],
+                        delivery_date=order['deliveryDate'],
+                        channel_type=self.__class__.__name__)
+                    self.data_list.append(order_model)
             if total <= page * page_size:
                 print(f'查询完毕, 总数量为{total}')
                 break
             page = page + 1
-            time.sleep(5)
+            self.sleep()
         return self
 
 

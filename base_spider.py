@@ -8,14 +8,18 @@ import pandas
 
 class BaseSpider(ABC):
 
-    def __init__(self, base_url: str, login_url: str, verify_url: str):
+    def __init__(self, base_url: str, login_url: str, verify_url: str, sleep_time: int = 3):
         self.base_url = base_url
         self.login_url = login_url
         self.verify_url = verify_url
         self.driver = self.get_chrome_driver()
         self.is_login = False
+        self.sleep_time = sleep_time
         self.data_list = []
-
+    
+    def sleep(self):
+        time.sleep(self.sleep_time)
+    
     @staticmethod
     def get_chrome_driver() -> webdriver:
         options = webdriver.ChromeOptions()

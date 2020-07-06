@@ -1,6 +1,6 @@
 class OrderModel:
     def __init__(self, order_id, total_price, receiver_name, receiver_address, receiver_phone, product_name, price,
-                 product_url, status, order_time, channel_type):
+                 product_url, status, order_time, delivery_date, channel_type):
         # 总订单id
         self.order_id = order_id
         # 总价格
@@ -21,5 +21,7 @@ class OrderModel:
         self.status = status
         # 下单时间
         self.order_time = order_time
+        # 收获时间
+        self.delivery_date = delivery_date
         # 渠道类型 ex: dangdang、jd、taobao
         self.channel_type = channel_type
