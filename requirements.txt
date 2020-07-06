@@ -1,0 +1,6 @@
+PyYAML==5.3
+requests==2.23.0
+selenium==3.141.0
+webdrivermanager==0.8.0
+pandas==0.25.3
+
