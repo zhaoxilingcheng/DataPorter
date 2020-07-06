@@ -7,7 +7,6 @@ class DangDangSpider(BaseSpider):
 
     def __init__(self):
         super().__init__(login_url='https://login.dangdang.com/signin.aspx', verify_url='http://www.dangdang.com/')
-        self.data_list = []
 
     def sub_login(self):
         driver = self.driver

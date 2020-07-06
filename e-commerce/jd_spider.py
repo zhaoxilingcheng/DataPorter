@@ -7,7 +7,6 @@ class JdSpider(BaseSpider):
 
     def __init__(self):
         super().__init__(login_url='https://passport.jd.com/new/login.aspx', verify_url='https://www.jd.com/')
-        self.data_list = []
 
     def sub_login(self):
         pass

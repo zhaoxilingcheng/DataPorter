@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
+import pandas
 
 
 class BaseSpider(ABC):
@@ -11,6 +12,7 @@ class BaseSpider(ABC):
         self.verify_url = verify_url
         self.driver = self.get_chrome_driver()
         self.is_login = False
+        self.data_list = []
 
     @staticmethod
     def get_chrome_driver() -> webdriver:
@@ -61,3 +63,12 @@ class BaseSpider(ABC):
     def close(self):
         self.driver.close()
         self.is_login = False
+
+    def to_csv(self):
+        if not self.data_list:
+            print('数据为空')
+            return
+        data_list = [i.__dict__ for i in self.data_list]
+        df = pandas.DataFrame()
+        df = df.append(data_list)
+        df.to_csv(self.__class__.__name__ + '.csv')

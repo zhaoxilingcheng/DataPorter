@@ -14,7 +14,6 @@ class ChinaMobileSpider(BaseSpider):
     def __init__(self):
         super().__init__(login_url='https://login.10086.cn/login.html',
                          verify_url='https://shop.10086.cn/i/?f=home')
-        self.data_list = []
 
     # 登录 页面的 操作 # TODO 这块可以完全交给 用户支配 , 故 这边 不做操作
     def sub_login(self):
