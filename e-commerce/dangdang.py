@@ -18,6 +18,9 @@ class DangDangSpider(BaseSpider):
         scan.click()
         scan_image_url = driver.find_element_by_xpath('//*[@id="J_qrcodeImg"]').get_attribute('src')
 
+    def run(self):
+        self.get_order_list()
+
     def get_order_list(self):
         page = 1
         while True:
@@ -58,9 +61,6 @@ class DangDangSpider(BaseSpider):
 
 
 if __name__ == '__main__':
-    dd = DangDangSpider().login_by_cookies()
-    print(dd.get_order_list().data_list)
-    dd.to_csv()
-    dd.save_cookie()
-    dd.close()
+    dd = DangDangSpider()
+    dd.start()
 

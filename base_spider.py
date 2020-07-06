@@ -17,6 +17,16 @@ class BaseSpider(ABC):
         self.sleep_time = sleep_time
         self.data_list = []
     
+    def start(self):
+        self.login_by_cookies()
+        self.run()
+        self.to_csv()
+        self.close()
+    
+    @abstractmethod
+    def run(self):
+        pass
+    
     def sleep(self):
         time.sleep(self.sleep_time)
     
