@@ -1,0 +1,158 @@
+{
+  "baseGood": {
+    "itemDTO": {
+      "baseItem": {
+        "item": {
+          "categoryId": categoryId,
+          "name": name,
+          "mainImage": mainImage,
+          "itemCode": itemCode,
+          "origin": origin,
+          "priceLabel": 1
+        },
+        "itemDetail": {
+          "images": []
+        },
+        "skus": [
+          {
+            "key": "橙,均码",
+            "warehouseCode": "DEFAULT151800904994831_1",
+            "颜色分类": "橙",
+            "尺码": "均码",
+            "fullPriceYuan": {
+              "marketPrice": "99.00",
+              "channelPrice": "61.00"
+            },
+            "stockQuantity": 999,
+            "attrs": [
+              {
+                "attrKey": "颜色分类",
+                "attrVal": "橙",
+                "attrValId": 1341
+              },
+              {
+                "attrKey": "尺码",
+                "attrVal": "均码",
+                "attrValId": 1766
+              }
+            ]
+          }
+        ],
+        "stocks": [
+          {
+            "warehouseCode": "DEFAULT151800904994831_1",
+            "quantity": 999
+          }
+        ],
+        "groupedSkuAttributes": [
+          {
+            "attrKey": "颜色分类",
+            "skuAttributes": [
+              {
+                "attrKey": "颜色分类",
+                "attrValId": 1341,
+                "attrVal": "橙",
+                "showImage": true
+              }
+            ]
+          },
+          {
+            "attrKey": "尺码",
+            "skuAttributes": [
+              {
+                "attrKey": "尺码",
+                "attrValId": 1766,
+                "attrVal": "均码",
+                "image": null,
+                "showImage": true
+              }
+            ]
+          }
+        ],
+        "groupedOtherAttributes": [
+          {
+            "group": "通用属性",
+            "otherAttributes": [
+              {
+                "attrKey": "品牌",
+                "attrVal": "无品牌",
+                "group": "通用属性",
+                "propertyId": 82541,
+                "attrValIds": [
+                  1500477
+                ],
+                "richInfo": false,
+                "unit": ""
+              },
+              {
+                "attrKey": "型号",
+                "attrVal": "QA-1801",
+                "group": "通用属性",
+                "propertyId": 82542,
+                "attrValIds": [],
+                "richInfo": false,
+                "unit": ""
+              },
+              {
+                "attrKey": "产地",
+                "attrVal": "{\"provinceId\":110000,\"cityId\":110100,\"regionId\":110101,\"limit\":0}",
+                "group": "通用属性",
+                "propertyId": 81973,
+                "richInfo": false,
+                "unit": ""
+              },
+              {
+                "attrKey": "电商平台链接",
+                "attrVal": "https://",
+                "group": "通用属性",
+                "propertyId": 1400007,
+                "richInfo": false,
+                "unit": null
+              }
+            ]
+          },
+          {
+            "group": "普通属性",
+            "otherAttributes": [
+              {
+                "attrKey": "生产厂商",
+                "attrVal": "other",
+                "group": "普通属性",
+                "propertyId": 82546,
+                "attrValIds": [],
+                "richInfo": false,
+                "unit": ""
+              },
+              {
+                "attrKey": "是否需要安装",
+                "attrVal": "不需要",
+                "group": "普通属性",
+                "propertyId": 82547,
+                "attrValIds": [
+                  10311
+                ],
+                "richInfo": false,
+                "unit": ""
+              }
+            ]
+          }
+        ],
+        "richText": "",
+        "fullItemMainExtDTO": {
+          "itemCode": "",
+          "itemPriceUnit": "元",
+          "itemPriceDesc": "费率"
+        },
+        "fullItemServiceRelDTOS": [],
+        "agCategoryGroupedOtherAttributes": [],
+        "images": {}
+      },
+      "channelAttrs": [],
+      "layer": "28"
+    },
+    "parts": [],
+    "isNewBusiness": true
+  },
+  "name": "风衣式长款雨衣成人男女通用 藏青 均码",
+  "categoryId": "6674"
+}

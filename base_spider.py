@@ -2,6 +2,7 @@ import pickle
 from abc import ABC, abstractmethod
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.wait import WebDriverWait
 import time
 import pandas
 
@@ -13,23 +14,24 @@ class BaseSpider(ABC):
         self.login_url = login_url
         self.verify_url = verify_url
         self.driver = self.get_chrome_driver()
+        self.wait = WebDriverWait(self.driver, 20, 0.05)
         self.is_login = False
         self.sleep_time = sleep_time
         self.data_list = []
-    
+
     def start(self):
         self.login_by_cookies()
+        self.driver.get(self.base_url)
         self.run()
-        self.to_csv()
         self.close()
-    
+
     @abstractmethod
     def run(self):
         pass
-    
+
     def sleep(self):
         time.sleep(self.sleep_time)
-    
+
     @staticmethod
     def get_chrome_driver() -> webdriver:
         options = webdriver.ChromeOptions()
@@ -60,7 +62,8 @@ class BaseSpider(ABC):
     def login(self):
         print('开始进行人工登录')
         driver = self.driver
-        driver.get(self.login_url)
+        if not self.is_login:
+            driver.get(self.login_url)
         self.sub_login()
         self.verify_login()
         return self
@@ -81,6 +84,7 @@ class BaseSpider(ABC):
                 break
             if wait_time >= 300:
                 raise Exception('登录失败')
+        self.save_cookie()
         return self.is_login
 
     def to_csv(self):
@@ -123,4 +127,5 @@ class BaseSpider(ABC):
     def close(self):
         self.save_cookie()
         self.driver.close()
+        self.driver.quit()
         self.is_login = False

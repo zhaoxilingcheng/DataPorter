@@ -1,90 +1,63 @@
+from random import random
+
 from base_spider import BaseSpider
+from selenium import webdriver,common
 import time
 from models import *
 from lxml import etree
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
 
 class JdSpider(BaseSpider):
 
-    def __init__(self,sleep_time: int = 3):
-        super().__init__(base_url='http://jd.com',login_url='https://passport.jd.com/new/login.aspx', verify_url='https://www.jd.com/',sleep_time=sleep_time)
+    def __init__(self, sleep_time: int = 3, item_id: int = 100012043978):
+        super().__init__(base_url='http://jd.com', login_url='https://passport.jd.com/new/login.aspx',
+                         verify_url='https://www.jd.com/', sleep_time=sleep_time)
+        self.item_id = item_id
+        self.item_url = f'https://item.jd.com/{item_id}.html'
+        self.kill_url = f'https://marathon.jd.com/seckill/seckill.action?skuId={item_id}&num=1'
+        # //*[@id="app"]/div/div[2]/div/div[5]/div[3]/div[2]/div/div/div/button
 
     def sub_login(self):
         pass
 
-    def get_order_list(self):
-        def getData():
-            html = self.driver.page_source
-            lxml = etree.HTML(html)
-            tbodys=lxml.xpath('//table[@class="td-void order-tb"]//tbody')
-            for tb in tbodys:
-                id=tb.xpath('./@id')[0]
-                if id.split('-')[0] != 'tb':
-                    continue
-                else:
-                    id=id.split('-')[-1]
-                    timedate = ''.join(tb.xpath('./tr[2]/td/span[2]/text()'))
-                    if timedate:
-                        shop_name = ''.join(tb.xpath('./tr[2]/td/div/span[1]/a[1]/text()')).strip()  # 店铺名
-                        if not shop_name:
-                            shop_name = ''.join(tb.xpath('./tr[2]/td/div/span/span/text()')).strip()  # 店铺名
-                        trade_name = ''.join(tb.xpath('./tr[3]/td/div/div[2]/div[1]/a/text()')).strip()
-                        trade_url = ''.join(tb.xpath('./tr[3]/td/div/div[2]/div[1]/a/@href')).strip()
+    def kill(self):
+        self.driver.get(self.kill_url)
+        # 提交订单
+        self.driver.find_element_by_xpath('//*[@id="app"]/div/div[2]/div/div[5]/div[3]/div[2]/div/div/div/button').click()
 
-                        goods_number = ''.join(tb.xpath('./tr[3]/td[1]/div[2]/text()')).strip()
-
-                        addressee = ''.join(tb.xpath('./tr[3]/td[2]/div/span/text()')).strip()
-                        try:
-                            addr = ''.join(tb.xpath('./tr[3]/td[2]/div/div/div[1]/p[1]/text()')).strip()
-                            phone = ''.join(tb.xpath('./tr[3]/td[2]/div/div/div[1]/p[2]/text()')).strip()
-                        except:
-                            addr = ''
-                            phone = ''
-                        money = ''.join(tb.xpath('./tr[3]/td[3]/div/span[1]/text()')).strip().replace('¥','')
-                        pay_mode = ''.join(tb.xpath('./tr[3]/td[3]/div/span[2]/text()')).strip()
-                        status = ''.join(tb.xpath('./tr[3]/td[4]/div/span/text()')).strip()
-
-                    else:
-                        timedate = ''.join(tb.xpath('./tr[1]/td/span[2]/text()')).strip()
-                        shop_name = ''.join(tb.xpath('./tr[1]/td/div/span[1]/a[1]/text()')).strip()  # 店铺名
-                        if not shop_name:
-                            shop_name = ''.join(tb.xpath('./tr[1]/td/div/span/span/text()')).strip()  # 店铺名
-                        trade_name = ''.join(tb.xpath('./tr[2]/td[1]/div[1]/div[2]/div[1]/a/text()')).strip()
-                        trade_url = ''.join(tb.xpath('./tr[2]/td[1]/div[1]/div[2]/div[1]/a/@href')).strip()
-                        goods_number = ''.join(tb.xpath('./tr[2]/td[1]/div[2]/text()')).strip()
-                        addressee = ''.join(tb.xpath('./tr[2]/td[2]/div/span/text()')).strip()
-                        try:
-                            addr = ''.join(tb.xpath('./tr[2]/td[2]/div/div/div[1]/p[1]/text()')).strip()
-                            phone = ''.join(tb.xpath('./tr[2]/td[2]/div/div/div[1]/p[2]/text()')).strip()
-                        except:
-                            addr = ''
-                            phone = ''
-                        money = ''.join(tb.xpath('./tr[2]/td[3]/div/span[1]/text()')).strip().replace('¥','')
-                        pay_mode = ''.join(tb.xpath('./tr[2]/td[3]/div/span[2]/text()')).strip()
-                        status = ''.join(tb.xpath('./tr[2]/td[4]/div/span/text()')).strip()
-
-
-                    # print(id,timedate,shop_name,trade_name,goods_number,addressee,addr,phone,money,pay_mode,status)
-
-                    order_model = OrderModel(order_id=id,total_price=money,receiver_name=addressee,receiver_address=addr,receiver_phone=phone,
-                                             product_name=trade_name,price=money,product_url=trade_url,status=status,order_time=timedate,
-                                             delivery_date='',channel_type=self.__class__.__name__)
-                    self.data_list.append(order_model)
-
-            next=lxml.xpath('//*[@id="order02"]/div[2]/div[2]/div[1]/a[3]/@href')
-            if next:
-                self.driver.find_element_by_xpath('//*[@id="order02"]/div[2]/div[2]/div[1]').click()
-                getData()
-            print(f'{year}年采集完成！')
-
-        years = [3,2014,2015, 2016, 2017, 2018, 2019, 2020]
-        for year in years:
-            self.driver.get(f'https://order.jd.com/center/list.action?search=0&d={year}&s=4096')
-            getData()
+    def run(self):
+        tag = 1
+        while True:
+            self.driver.get(self.item_url)
+            first_result = self.wait.until(presence_of_element_located((By.ID, "btn-reservation")))
+            textContent = first_result.get_attribute("textContent")
+            if (textContent == '等待抢购'):
+                print('还没开始，等待抢购！{}'.format(tag))
+            elif (textContent == '立即抢购'):
+                try:
+                    print('终于开始了，立即抢购!')
+                    first_result.click()
+                    first_result = self.wait.until(presence_of_element_located((By.CLASS_NAME, "checkout-submit")))
+                    first_result.click()
+                    print("提交订单！")
+                    time.sleep(100)
+                    break
+                except common.exceptions.TimeoutException as e:
+                    print('没赶上，明天再来吧！')
+                    break
+            time.sleep(random.randint(1, 3) * 0.01)
+            tag += 1
+            if (tag > 300):
+                break
 
 if __name__ == '__main__':
     dd = JdSpider().login_by_cookies()
-    dd.get_order_list()
     dd.to_csv()
     dd.save_cookie()
+
     dd.close()
 

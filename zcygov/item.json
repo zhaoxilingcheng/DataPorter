@@ -1,0 +1,265 @@
+{
+  "success": true,
+  "result": {
+    "item": {
+      "price": null,
+      "lowPrice": 6500,
+      "highPrice": 6500,
+      "lowVipPrice": null,
+      "highVipPrice": null,
+      "lowPlatformPrice": 9900,
+      "highPlatformPrice": 9900,
+      "id": 48719271,
+      "itemCode": "QA-1801",
+      "categoryId": 6674,
+      "categoryName": "雨衣",
+      "spuId": null,
+      "shopId": 171395,
+      "shopName": "青海华尔泰工程咨询有限公司",
+      "name": "风衣式长款雨衣成人男女通用 藏青 均码",
+      "mainImage": "https://itemcdn.zcycdn.com/3000389447/8a648aee-00f8-464b-b45c-1e74e46a56c7.png",
+      "status": 1,
+      "stockType": 0,
+      "stockQuantity": 99970,
+      "saleQuantity": 29,
+      "onShelfAt": 1567772131000,
+      "reduceStockType": 1,
+      "extra": {
+        "firm": "other",
+        "unit": "件",
+        "selfPlatformLink": "https://item.jd.com/100002631638.html#crumb-wrap",
+        "needInstalled": "0"
+      },
+      "origin": {
+        "regionId": "",
+        "limit": "0",
+        "cityId": "",
+        "countryName": "中国",
+        "provinceName": "北京",
+        "provinceId": "110000",
+        "countryId": "2"
+      },
+      "tags": {
+        "netsuper": "1"
+      },
+      "tagNames": [
+        "网超"
+      ],
+      "itemInfoMd5": "d8f230b097bf6c25839d0178e3a1a8d7",
+      "source": null,
+      "layer": 111,
+      "channelItemId": 48719270,
+      "agreementId": 21976,
+      "createdAt": 1567742203000,
+      "updatedAt": 1606782442000,
+      "keyAttrsBrief": "82541:其他/other;82542:QA-1801;",
+      "brandId": 94,
+      "brandName": "其他/other",
+      "specification": "QA-1801",
+      "instanceCode": "QHWC",
+      "itemSource": null,
+      "shopFlagName": null,
+      "priceLabel": 1
+    },
+    "groupedSkuAttrs": [
+      {
+        "attrKey": "颜色分类",
+        "skuAttributes": [
+          {
+            "propertyId": 77586,
+            "attrKey": "颜色分类",
+            "attrVal": "藏青",
+            "unit": null,
+            "showImage": false,
+            "thumbnail": null,
+            "image": null
+          }
+        ]
+      },
+      {
+        "attrKey": "尺码",
+        "skuAttributes": [
+          {
+            "propertyId": 81802,
+            "attrKey": "尺码",
+            "attrVal": "均码",
+            "unit": null,
+            "showImage": false,
+            "thumbnail": null,
+            "image": null
+          }
+        ]
+      }
+    ],
+    "skus": [
+      {
+        "extraPriceJson": null,
+        "extraPrice": null,
+        "fullPriceJson": "{\"channelPrice\":6500,\"agreementPrice\":6500,\"marketPrice\":9900,\"platformPrice\":9900}",
+        "fullPrice": {
+          "agreementPrice": 6500,
+          "marketPrice": 9900,
+          "channelPrice": 6500,
+          "platformPrice": 9900
+        },
+        "price": 6500,
+        "vipPrice": null,
+        "activityPrice": null,
+        "usePrice": null,
+        "priceWithoutPromotion": 6500,
+        "ladderPrice": [],
+        "promotionInfo": null,
+        "id": 54737098,
+        "skuCode": "QA-18016599",
+        "itemId": 48719271,
+        "shopId": 171395,
+        "status": 1,
+        "specification": null,
+        "outerSkuId": null,
+        "outerShopId": null,
+        "image": null,
+        "thumbnail": null,
+        "name": null,
+        "layer": 111,
+        "channelSkuId": 54737097,
+        "attrs": [
+          {
+            "propertyId": null,
+            "attrKey": "尺码",
+            "attrVal": "均码",
+            "unit": null,
+            "showImage": null,
+            "thumbnail": null,
+            "image": null
+          },
+          {
+            "propertyId": null,
+            "attrKey": "颜色分类",
+            "attrVal": "藏青",
+            "unit": null,
+            "showImage": null,
+            "thumbnail": null,
+            "image": null
+          }
+        ],
+        "attrsJson": "[{\"attrKey\":\"尺码\",\"attrVal\":\"均码\"},{\"attrKey\":\"颜色分类\",\"attrVal\":\"藏青\"}]",
+        "stockType": 0,
+        "stockQuantity": 99970,
+        "createdAt": 1567742203000,
+        "updatedAt": 1567772131000,
+        "instanceCode": "QHWC",
+        "concessionRate": 34.34,
+        "discountRate": 65.66
+      }
+    ],
+    "imageInfos": [],
+    "showGpCatalog": false,
+    "gpCatalog": [],
+    "pplanMust": false,
+    "categoryTags": [],
+    "itemDetail": {
+      "itemId": 48719271,
+      "images": [],
+      "imagesJson": "[]",
+      "packing": null,
+      "packingJson": null,
+      "service": null,
+      "detail": "<img src=\"http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/ffb8ec1d-8c58-425b-a931-ba9ebc48c9d6.png\" title=\"Image: http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/ffb8ec1d-8c58-425b-a931-ba9ebc48c9d6.png\"> \n<img src=\"http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/fb8da746-427d-42dc-bc6c-54c2e94fbe6b.png\" title=\"Image: http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/fb8da746-427d-42dc-bc6c-54c2e94fbe6b.png\"> \n<img src=\"http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/86916c7f-5406-4404-a2a7-d73302bd5533.png\" title=\"Image: http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/86916c7f-5406-4404-a2a7-d73302bd5533.png\"> \n<img src=\"http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/8d07bfb1-a82b-4ee0-9b27-afc78802a403.png\" title=\"Image: http://zcy-gov-item.oss-cn-north-2-gov-1.aliyuncs.com/3000389447/8d07bfb1-a82b-4ee0-9b27-afc78802a403.png\">",
+      "createdAt": 1567742203000,
+      "updatedAt": 1567742203000
+    },
+    "hasParam": true,
+    "itemDetailMark": {
+      "itemId": 48719271,
+      "isEnergySave": null,
+      "isEnvironProtect": null,
+      "isWaterSave": null,
+      "isPZBZJZZ": null,
+      "isZJMPCP": null,
+      "isLZH": null,
+      "isZJCKMP": null,
+      "isSTT": null,
+      "isJCCP": null,
+      "isPrivate": null,
+      "isFactory": null,
+      "isCompany": null,
+      "isDealer": null,
+      "isMiddleSmallEnter": null,
+      "isNoStockItem": null,
+      "isServiceItem": null,
+      "isNeedSupplierItem": null
+    },
+    "allowSale": true,
+    "isNet": null,
+    "markCode": null,
+    "checkCode": null,
+    "assetLimitTag": null,
+    "purchaserCount": null,
+    "serviceItemId": null,
+    "serviceItem": null,
+    "unit": "件",
+    "discount": null,
+    "fixType": null,
+    "fixTypeName": null,
+    "transferDTO": {
+      "industryCode": "002",
+      "industryId": 50898,
+      "industryName": "网上超市",
+      "industryShortName": null,
+      "instanceCode": "QHWC",
+      "instanceId": 57,
+      "instanceName": "青海网超",
+      "platformLevel": 0,
+      "domain": "www.zcygov.cn",
+      "appDomain": "m.zcygov.cn",
+      "limitPurchase": 0,
+      "tagList": [
+        1
+      ],
+      "applicationTags": [
+        2
+      ]
+    },
+    "itemStandardVOs": [],
+    "branchCompanyVO": null,
+    "itemTagsVO": {
+      "serviceItem": false,
+      "noStockItem": false,
+      "needSupplierItem": false,
+      "hasPart": false,
+      "hasConfirmPrice": false
+    },
+    "simpleRichTextVOList": [],
+    "showPrice": true,
+    "priceLoginVisible": true,
+    "visibleConfig": {
+      "priceLoginUsersVisible": false,
+      "priceLoginSupplierIsVisible": false
+    },
+    "showSale": true,
+    "showHighPrice": null,
+    "showLowPrice": null,
+    "hasLimitNumber": false,
+    "limitNumber": null,
+    "remainingQty": null,
+    "extDTO": {
+      "id": null,
+      "itemId": 48719271,
+      "itemCode": null,
+      "itemPrice": 0,
+      "marketPrice": null,
+      "itemPriceYuan": "0.00",
+      "itemPriceUnit": "元",
+      "itemPriceDesc": null,
+      "protocolCategoryId": 0,
+      "saleNumControl": 0,
+      "oversaleNum": 0,
+      "barCode": null,
+      "creatorId": null,
+      "updatorId": null
+    },
+    "flexibleLabels": []
+  },
+  "code": null,
+  "message": null
+}

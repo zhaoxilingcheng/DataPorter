@@ -1,0 +1,191 @@
+{
+  "success": true,
+  "result": [
+    {
+      "group": "通用属性",
+      "index": 1,
+      "otherAttributes": [
+        {
+          "propertyId": 82541,
+          "attrKey": "品牌",
+          "attrVal": "得力/deli",
+          "unit": null,
+          "group": "通用属性",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        },
+        {
+          "propertyId": 82542,
+          "attrKey": "型号",
+          "attrVal": "3893",
+          "unit": null,
+          "group": "通用属性",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        },
+        {
+          "propertyId": 82544,
+          "attrKey": "计量单位",
+          "attrVal": "台",
+          "unit": null,
+          "group": "通用属性",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        }
+      ]
+    },
+    {
+      "group": "普通属性",
+      "index": 2,
+      "otherAttributes": [
+        {
+          "propertyId": 82546,
+          "attrKey": "生产厂商",
+          "attrVal": "得力（deli）",
+          "unit": null,
+          "group": "普通属性",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        },
+        {
+          "propertyId": 82547,
+          "attrKey": "是否需要安装",
+          "attrVal": "不需要",
+          "unit": null,
+          "group": "普通属性",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        }
+      ]
+    },
+    {
+      "group": "主要参数",
+      "index": 4,
+      "otherAttributes": [
+        {
+          "propertyId": 81957,
+          "attrKey": "产品尺寸（长*宽*高）(mm)",
+          "attrVal": "365×145×90",
+          "unit": null,
+          "group": "主要参数",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        },
+        {
+          "propertyId": 77000,
+          "attrKey": "装订厚度",
+          "attrVal": "0—30mm",
+          "unit": null,
+          "group": "主要参数",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        },
+        {
+          "propertyId": 76897,
+          "attrKey": "最大幅面",
+          "attrVal": "A4",
+          "unit": null,
+          "group": "主要参数",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        },
+        {
+          "propertyId": 78170,
+          "attrKey": "塑封速度",
+          "attrVal": "300mm/min",
+          "unit": null,
+          "group": "主要参数",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        }
+      ]
+    },
+    {
+      "group": "服务信息",
+      "index": 24,
+      "otherAttributes": [
+        {
+          "propertyId": 77121,
+          "attrKey": "质保时间 (个月)",
+          "attrVal": "12",
+          "unit": null,
+          "group": "服务信息",
+          "readOnlyBySeller": null,
+          "multi": false,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": 1,
+          "index": 100
+        }
+      ]
+    },
+    {
+      "group": "其他参数",
+      "index": 2147483647,
+      "otherAttributes": [
+        {
+          "propertyId": null,
+          "attrKey": "计价单位",
+          "attrVal": "元",
+          "unit": null,
+          "group": "USER_DEFINED",
+          "readOnlyBySeller": null,
+          "multi": null,
+          "composite": null,
+          "otherAttributeAttachs": [],
+          "imageInfos": [],
+          "propertyType": null,
+          "index": 100
+        }
+      ]
+    }
+  ],
+  "code": null,
+  "message": null
+}
